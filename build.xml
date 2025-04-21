@@ -81,7 +81,8 @@
         <delete dir="${build.dir}"/>
         <delete dir="ant/lib"/>
     </target>
-
+	
+    <!-- ========== test ========== -->
     <target name="test" depends="build" description="Run JUnit 5 tests">
         <mkdir dir="${junit-reports.dir}"/>
         <junitlauncher haltOnFailure="true" printSummary="true">
@@ -129,7 +130,7 @@
 
         <!-- Генерация javadoc -->
         <mkdir dir="${doc.dir}"/>
-        <javadoc sourcepath="${main.dir}/java" destdir="${doc.dir}" classpathref="classpath" packagenames="ru.vova.lab3.**">
+        <javadoc sourcepath="${main.dir}/java" destdir="${doc.dir}" classpathref="classpath" packagenames="ru.vova.lab3">
             <doctitle>${project.name} API</doctitle>
         </javadoc>
 
