@@ -103,7 +103,7 @@
     <!-- ========== scp ========== -->
     <target name="scp" depends="build" description="Перемещение собранного проекта по SCP">
         <echo message="Кидаем файлик на гелиос..." />
-        <scp file="${libs}/${war.name}" todir="${scp.username}@helios:${scp.remote.dir}" keyfile="${user.home}/.ssh/id_rsa" trust="true"/>
+        <scp file="${libs}/${war.name}" todir="${scp.username}@${scp.host}:/home/studs/${scp.username}" port="${scp.port}" password="${scp.password}" trust="true"/>
     </target>
 
     <!-- ========== native2ascii ========== -->
